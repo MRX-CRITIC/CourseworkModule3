@@ -1,0 +1,69 @@
+* {
+    font-family: "JetBrains Mono Medium", sans-serif;
+}
+
+.table-base {
+    margin-top: 13vh;
+    display: grid;
+    text-align: center;
+    justify-content: center;
+    border-collapse: collapse;
+    grid-template-columns: 100%;
+    padding: 3vh;
+}
+
+td {
+    width: 24vh;
+    margin: 1.5vh;
+    padding: 1.5vh;
+}
+
+th {
+    border-bottom: 1px solid black;
+    width: 24vh;
+    margin: 1.5vh;
+    padding: 1.5vh;
+    font-size: 2.2vh;
+}
+
+tbody {
+    border: 1px solid black;
+    border-radius: 7px;
+    box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.5);
+    background: aliceblue;
+}
+
+.p\/p {
+    width: 4%;
+    margin: 0;
+    padding: 0;
+}
+
+.title {
+    border-inline: 1px solid black;
+}
+
+.description {
+    border-inline: 1px solid black;
+}
+
+.vendor_code {
+    border-inline: 1px solid black;
+}
+
+.date {
+    border-inline: 1px solid black;
+}
+
+.author {
+    border-inline: 1px solid black;
+}
+
+.custom-btn {
+    width: 5vh;
+    height: 5vh;
+}
+
+.new_status {
+    border-radius: 7px;
+}

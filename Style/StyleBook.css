@@ -1,0 +1,94 @@
+* {
+    font-family: "JetBrains Mono Medium", sans-serif;
+}
+
+body {
+    margin-top: 15vh;
+    color: black;
+}
+
+.margin {
+    margin: 1vh;
+    padding: 1vh;
+}
+
+h1 {
+    border-bottom: 2px solid black;
+}
+
+form {
+    border-radius: 1vh;
+    border: 1px solid black;
+    text-align: center;
+    justify-content: start;
+    border-collapse: collapse;
+    justify-items: center;
+    box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.5);
+    background: aliceblue;
+    margin-top: 1.8vh;
+}
+
+.blocks {
+    display: grid;
+    grid-template-columns: 50%;      /*grid-template-columns: 50% 50%;*/
+    justify-content: center;
+    margin-top: 10vh;
+}
+
+.block-1 {
+    padding: 0 0 2vh 0;
+}
+
+input {
+    width: 35vh;
+    height: 3vh;
+    font-size: 1.5vh;
+    background: aliceblue;
+    border-radius: 10px;
+    border: 1px solid;
+}
+
+select {
+    padding: 0.5vh 2vh 0.5vh 2vh;
+    background: whitesmoke;
+    border-radius: 10px;
+}
+
+.frame {
+    width: 90%;
+    text-align: center;
+}
+
+textarea {
+    width: 35vh;
+    height: 15vh;
+    font-size: 1.5vh;
+    background: aliceblue;
+    border-radius: 10px;
+}
+
+.custom-btn {
+    margin: 1.5vh 0 0 0;
+    width: 200px;
+    height: 40px;
+    font-size: 2vh;
+    background: white;
+    border-radius: 2vh;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.5);
+    margin-left: 10%;
+}
+
+.btn-16 {
+    border: none;
+    color: black;
+}
+
+.btn-16:hover:after {
+    left: auto;
+    right: 0;
+    width: 100%;
+}
+
+.btn-16:active {
+    top: 2px;
+}

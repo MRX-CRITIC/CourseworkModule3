@@ -1,0 +1,79 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    font-family: "JetBrains Mono Medium", sans-serif;
+    font-size: 2vh;
+    text-decoration: none;
+}
+
+.link {
+    width: 100%;
+    height: 9%;
+    position: fixed;
+    display: block;
+    z-index: 1;
+    top: 0;
+    padding: 3vh;
+    box-sizing: border-box;
+    text-align: center;
+    background: royalblue;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.5);
+}
+
+.link:before, .link:after {
+    content: "";
+    display: table;
+}
+
+.link:after {
+    clear: both;
+}
+
+.link-effect a {
+    color: white;
+    margin: 2%;
+    padding: 10px 0;
+    position: relative;
+    transition: ease-out 0.3s 0.1s;
+}
+
+.link-effect a::after {
+    height: 2px;
+    width: 100%;
+    background: white;
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    -ms-transform: scaleX(0);
+    transform: scaleX(0);
+    transition: 0.3s;
+}
+
+.link-effect a:hover::after {
+    -ms-transform: scaleX(1);
+    transform: scaleX(1);
+}
+
+.name-user {
+    margin-left: 80%;
+    margin-top: -4.3vh;
+    font-size: 2vh;
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 1vh;
+    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.change {
+    font-size: 1.5vh;
+    color: yellow;
+}
+
+.name-user-text {
+    font-size: 1.7vh;
+}
