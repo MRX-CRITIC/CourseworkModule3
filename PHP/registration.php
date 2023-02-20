@@ -1,7 +1,5 @@
 <?php
-
-require_once "../PHP/function.php";
-
+require_once "../PHP/functions.php";
 
 // Проверка на существование данных
 if (
@@ -13,7 +11,6 @@ if (
     $login = $_POST['login'];
     $password = $_POST['password'];
     $name = $_POST['name'];
-
 
     // Проверка повторения пароля
     if ($password != $_POST['password_repeat']) {

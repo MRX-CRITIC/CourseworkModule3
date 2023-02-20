@@ -1,6 +1,5 @@
 <?php
-
-require_once "../PHP/function.php";
+require_once "../PHP/functions.php";
 require_once "../HTML/top_panel.php";
 
 $table = getTableStatus();
@@ -8,11 +7,9 @@ $table = getTableStatus();
 $N = 0;
 
 session_start();
-
 if (empty($_SESSION['user'])) {
     header("location: /");
 }
-
 ?>
 
 <link rel="stylesheet" href="../Style/StyleStatus.css">
@@ -25,7 +22,6 @@ if (empty($_SESSION['user'])) {
         <th>Статус</th>
         <th>Дата</th>
     </tr>
-
 
     <?php foreach ($table as $tables): ?>
 

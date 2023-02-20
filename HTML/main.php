@@ -1,7 +1,6 @@
 <?php
-
 require_once "../HTML/top_panel.php";
-require_once "../PHP/function.php";
+require_once "../PHP/functions.php";
 
 $table = getTable();
 
@@ -13,16 +12,14 @@ if (!empty($_POST)) {
     $book_id = $_POST['id'];
 
     stateChange($new_status, $book_id);
-
 }
+
 
 
 session_start();
-
 if (empty($_SESSION['user'])) {
     header("location: /");
 }
-
 ?>
 
 <link rel="stylesheet" href="../Style/StyleMain.css">
@@ -39,7 +36,6 @@ if (empty($_SESSION['user'])) {
         <th>Выдача / Возврат</th>
     </tr>
 
-
     <?php foreach ($table as $tables): ?>
 
         <tr>
@@ -50,25 +46,28 @@ if (empty($_SESSION['user'])) {
             <td class="vendor_code"><?= $tables['vendor_code'] ?></td>
             <td class="date"><?= $tables['date'] ?></td>
             <td class="author"><?= $tables['author'] ?></td>
-
             <td>
-
                 <form class="" method="post">
 
                     <input type="hidden" name="id" id="id" value="<?= $tables['id'] ?>">
-                    <input class="custom-btn" name="Выдача" id="input" value="" type="image" src="../image/lend-a-book.png">
-                    <input class="custom-btn" name="Возврат" id="input" value="" type="image" src="../image/book-return.png"><br>
-                    <input class="new_status" id="new_status" name="new_status" placeholder="Изменения статуса книги" required>
 
+                    <select class="new_status" id="new_status" name="new_status">
+
+                        <option>
+                            Готова к выдаче
+                        </option>
+                        <option>
+                            Отсутствует
+                        </option>
+                    </select>
+
+                    <input class="custom-btn btn-16" type="submit" value="Изменить">
 
                     <?= $tables['new_status'] ?>
 
                 </form>
             </td>
-
         </tr>
-
     <?php endforeach; ?>
-
 </table>
 

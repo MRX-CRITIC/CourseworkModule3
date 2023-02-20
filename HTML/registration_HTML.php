@@ -1,11 +1,8 @@
 <?php
-
 session_start();
-
 if (!empty($_SESSION['user'])) {
     header("location: ..\HTML\main.php");
 }
-
 ?>
 
 <link rel="stylesheet" href="../Style/StyleRegistration.css">
@@ -39,12 +36,10 @@ if (!empty($_SESSION['user'])) {
             <span></span>
         </div>
 
-<!--        <div>--><?php //echo $_SESSION['message']; unset($_SESSION['message']); ?><!--</div>-->
+        <!--        <div>--><?php //echo $_SESSION['message']; unset($_SESSION['message']); ?><!--</div>-->
 
         <input type="submit">
-
     </form>
-
     <div class="signup_link">У Вас есть аккаунт? <a href="../HTML/authorization_HTML.php">Авторизация</a>
     </div>
 

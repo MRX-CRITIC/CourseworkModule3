@@ -15,7 +15,7 @@ body {
     transform: translate(-50%, -50%);
     width: 40vh;
     height: 45vh;
-    background: rgba(224,238,212,0.90);
+    background: rgba(224, 238, 212, 0.90);
     border-radius: 25px;
 }
 
@@ -63,14 +63,14 @@ form .txt_field {
     left: 0;
     width: 0;
     height: 2px;
-    background: rgba(200,122,77,0.92);
+    background: rgba(200, 122, 77, 0.92);
     transition: 0.3s;
 }
 
 .txt_field input:focus ~ label,
 .txt_field input:valid ~ label {
     top: -5px;
-    color: rgba(200,122,77,0.92);
+    color: rgba(200, 122, 77, 0.92);
 }
 
 .txt_field input:focus ~ span::before,
@@ -80,7 +80,7 @@ form .txt_field {
 
 .pass {
     margin: -5px 0 15px 5px;
-    color: rgba(200,122,77,0.92);
+    color: rgba(200, 122, 77, 0.92);
     cursor: pointer;
 }
 
@@ -92,7 +92,7 @@ input[type="submit"] {
     width: 100%;
     height: 50px;
     border: 1px solid;
-    background: rgba(200,122,77,0.92);
+    background: rgba(200, 122, 77, 0.92);
     font-size: 18px;
     border-radius: 25px;
     font-weight: 700;
@@ -102,7 +102,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    border-color: rgba(200,122,77,0.92);
+    border-color: rgba(200, 122, 77, 0.92);
     transition: 0.5s;
 }
 
@@ -114,7 +114,7 @@ input[type="submit"]:hover {
 }
 
 .signup_link a {
-    color: rgba(200,122,77,0.92);
+    color: rgba(200, 122, 77, 0.92);
     text-decoration: none;
 }
 
@@ -182,7 +182,7 @@ button {
 }
 
 h1 {
-    color: rgba(133,72,77,0.92);
+    color: rgba(133, 72, 77, 0.92);
 }
 
 

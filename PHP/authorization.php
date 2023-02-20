@@ -1,6 +1,5 @@
 <?php
-
-require_once "../PHP/function.php";
+require_once "../PHP/functions.php";
 
 // Проверка на существование данных
 if (
@@ -13,6 +12,5 @@ if (
 
     // Обращение к БД
     authorization($login, $password);
-
 }
 

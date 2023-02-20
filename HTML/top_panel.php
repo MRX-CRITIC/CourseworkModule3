@@ -1,6 +1,5 @@
 <?php
 session_start();
-
 if (empty($_SESSION['user'])) {
     header("location: /");
 }
@@ -17,29 +16,25 @@ if (empty($_SESSION['user'])) {
 
 <body>
 
-
 <section class="link">
 
     <nav class="link-effect" id="link-effect">
         <a href="../HTML/main.php">Главная</a>
         <a href="../HTML/status-books.php">Статус</a>
         <a href="../HTML/adding-book.php">Добавить книгу</a>
-        <a href="">Поиск</a>
+        <a href="../HTML/search.php">Поиск</a>
         <a href="../PHP/exit.php">Выход</a>
     </nav>
 
     <div class="name-user">
 
         <span class="name-user-text">Пользователь: </span>
-                <?php
-                session_start();
-                echo $_SESSION['user']['name'];
-                ?>
+        <?php
+        session_start();
+        echo $_SESSION['user']['name'];
+        ?>
         <div><a class="change" href="../HTML/rename.php"> (Редактировать / Изменить)</a></div>
 
     </div>
-
 </section>
-
-
 </body>

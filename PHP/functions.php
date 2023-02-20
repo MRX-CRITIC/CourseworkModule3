@@ -5,7 +5,6 @@ const username = 'root';
 const password = '';
 const database = 'library';
 
-
 function db_connect()  // Подключение к БД + установка котировки
 {
     $mysqli = @mysqli_connect(hostname, username, password, database);
@@ -25,7 +24,6 @@ function db_connect()  // Подключение к БД + установка к
         );
         die();
     }
-
     return $mysqli;
 }
 
@@ -46,12 +44,10 @@ function registration($login)  // регистрация пользовател�
 
     db_close($mysqli);
 
-
     if (count($user) > 0) {
         echo "Такой пользователь уже существует!";
         exit();
     }
-
     return $user;
 }
 
@@ -100,7 +96,6 @@ function authorization($login, $password) // авторизация пользо
     } else {
         echo "Логин или пароль введен не верно!";
     }
-
     db_close($mysqli);
     return $BD;
 }
@@ -110,7 +105,7 @@ function getTable()  // вывод общей таблицы из БД books ф�
     $mysqli = db_connect();
 
     $sql = "select books.id, books.name as title, books.description, books.vendor_code, books.date, a.name as author from books
-                                                                        LEFT JOIN authors a on a.id = books.author_id ORDER BY title;";
+                                                        LEFT JOIN authors a on a.id = books.author_id ORDER BY title;";
 
     $tables = mysqli_query($mysqli, $sql);
     $tables = mysqli_fetch_all($tables, MYSQLI_ASSOC);
@@ -119,7 +114,7 @@ function getTable()  // вывод общей таблицы из БД books ф�
     return $tables;
 }
 
-function AddNote($title, $description, $vendor_code, $author_id)  // добавление новой книги в БД, применяется в adding-book.php
+function AddNote($title, $description, $vendor_code, $author_id)  // добавление новой книги в БД + их статуса, применяется в adding-book.php
 {
     $mysqli = db_connect();
 
@@ -128,25 +123,17 @@ function AddNote($title, $description, $vendor_code, $author_id)  // добав�
     $vendor_code = mysqli_real_escape_string($mysqli, $vendor_code);
     $author_id = mysqli_real_escape_string($mysqli, $author_id);
 
+    $sql = "INSERT INTO books (name, description, vendor_code, date, author_id)
+                VALUES ('{$title}', '{$description}', '{$vendor_code}', now(), '{$author_id}');";
 
-    $sql = "INSERT INTO books (name, description, vendor_code, date, author_id) 
-                    VALUES('{$title}', '{$description}', '{$vendor_code}', now(), '{$author_id}');";
-
-    $BD = mysqli_query($mysqli, $sql);
-
-    db_close($mysqli);
-    return $BD;
-}
-
-function StatusWhenAdded()
-{
-    $mysqli = db_connect();
-
-    $sql = "INSERT INTO book_status (book_id, status, date)
-VALUES(LAST_INSERT_ID(),'В наличии', now());";
+    $sql_2 = "INSERT INTO book_status (book_id, status, date)
+                VALUES (LAST_INSERT_ID(), 'Готов к выдаче', now());";
 
     $BD = mysqli_query($mysqli, $sql);
 
+    if ($BD) {
+        $BD = mysqli_query($mysqli, $sql_2);
+    }
     db_close($mysqli);
     return $BD;
 }
@@ -185,7 +172,7 @@ function getTableStatus() // выводит таблицу статусов кн
 
 
     $sql = "select b.name, status, book_status.date from book_status
-        left join books b on b.id = book_status.book_id ORDER BY book_status.id;";
+        left join books b on b.id = book_status.book_id ORDER BY name;";
 
     $tables_status = mysqli_query($mysqli, $sql);
     $tables_status = mysqli_fetch_all($tables_status, MYSQLI_ASSOC);

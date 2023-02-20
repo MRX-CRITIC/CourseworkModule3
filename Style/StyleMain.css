@@ -60,10 +60,26 @@ tbody {
 }
 
 .custom-btn {
-    width: 5vh;
-    height: 5vh;
+    border-radius: 7px;
+    border: 0 solid white;
+    padding: 0.3vh;
+    box-shadow: 0 0 3px 3px rgba(0, 0, 0, 0.5);
 }
 
 .new_status {
     border-radius: 7px;
+    padding: 0.2vh;
+    margin: 0 1vh 0 0;
 }
+
+.btn-16:hover:after {
+    left: auto;
+    right: 0;
+    width: 100%;
+}
+
+.btn-16:active {
+    top: 2px;
+}
+
+
